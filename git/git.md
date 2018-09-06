@@ -1,16 +1,23 @@
-**常用命令**：
+## **常用命令**：
 
-- git init git 初始化
-- git pull 更新
--  提交sta
-- 1) git add .  加入未受版本库控制的加入
-- 2) git commit -am "update" 提交至仓库。不设置默认为本地仓库 
-- 3) git push origin xxx  提交至git服务器上
--  提交end
+- git 初始化：`git init` 
+- 更新:`git pull `
+- 提交sta
+  1. ` git add .  加入未受版本库控制的加入`
+  2. `  git commit -am "update" 提交至仓库。不设置默认为本地仓库 ` 
+  3. `git push origin xxx  提交至git服务器上`
+
+- 提交end
 
 
 
-查看分支：	  git branch -a	
+查看分支：	
+
+```
+  git branch -a
+```
+
+	
 
 创建分支：	  git branch 分支名
 
@@ -22,13 +29,13 @@
 
 
 
-合并分支
+## **合并分支**
 
 先切换分支。切换到你要更新的分支 git pull
 
 git merge 需要合并的分支
 
-git push	提交代码
+git push	提交代码 
 
 切换回原分支
 
@@ -40,7 +47,7 @@ To:如果切换失败使用 更新分支：
 
 
 
-**基础配置：**
+## **基础配置：**
 
 git config --global user.name "用户名" git config --global user.email "邮箱地址"
 
@@ -52,7 +59,7 @@ git config --global user.name "username" 修改用户 git config --global user.e
 
 
 
-**服务添加新的项目：**
+## **服务添加新的项目：**
 
 su git 切换git用户
 
@@ -82,13 +89,13 @@ git push
 
 
 
-**拉取项目：**
+## **拉取项目：**
 
 git clone Git仓库管理员账号名@服务器ip地址:项目仓库名.git
 
 
 
-**缓冲区：**
+## **缓冲区：**
 
 如果本地仓库或服务仓库中存在一定的差异。如果是本地传输至服务的。可直接替代
 
@@ -96,11 +103,11 @@ git clone Git仓库管理员账号名@服务器ip地址:项目仓库名.git
 
 然后更改版本的差异。提交至超前的版本中
 
-查看后，如果抛弃之前的缓冲 git stash clear 
+查看后，如果抛弃之前的缓冲 git stash clear  
 
 
 
-**回滚版本：**
+## **回滚版本：**
 
 $ git  log 			 查看git 日记
 
