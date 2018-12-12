@@ -1,7 +1,5 @@
 
 
-																[回到目录](../index.md)
-
 ## 常用命令：
 
 git 初始化：`git init` 
@@ -121,10 +119,12 @@ git push
 
 查看git 日记： `git  log` 			 
 
-回退到上个版本： `git reset --hard HEAD^`         
+回退到上个版本： `git reset --hard HEAD`         
 
 `git reset --hard HEAD~3`        回退到前3次提交之前，以此类推，回退到n次提交之前
 
 ` git reset --hard commit_id`     退到/进到 指定commit的sha码
+
+权限目录从655 改成755 之后。可修改 `vi .git/config`  里面的core filemode 改为false 不检测文件权限的更改
 
 
