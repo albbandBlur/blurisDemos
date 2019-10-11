@@ -2,7 +2,8 @@
 
 ```shell
 server{
-        listen 443;
+  		listen 80 default backlog=2048;
+        listen 443 ssl;
         server_name ;
         index index.html index.htm index.php default.html default.htm default.php;
         root  ;
@@ -16,8 +17,8 @@ server{
      # HSTS的合理使用，max-age表明HSTS在浏览器中的缓存时间，includeSubdomainscam参数指定应该在所有子域上启用HSTS，preload参数表示预加载，通过Strict-Transport-Security: max-age=0将缓存设置为0可以撤销HSTS
     	add_header Strict-Transport-Security "max-age=63072000; includeSubdomains; preload";
 
-	
-		ssl on;
+		#https 和http并存的时候关闭下列选项
+		#ssl on;
 		#免去客户端再去 CA 服务器验证的动作
 		ssl_stapling on;
         ssl_stapling_verify on;
@@ -108,3 +109,20 @@ net.ipv4.tcp_timestamps=0
 
 7. 定时器里加上如下规则：
    `0 3 */30 * * /root/certbot-auto renew --disable-hook-validation --renew-hook "lnmp nginx reload"`
+   
+8. 生成可浏览器识别的
+
+   ```tex
+   如果是CentOS 6、7，先执行：yum install epel-release
+   
+   cd /root/
+   
+   下载Let's Encrypt：git clone https://github.com/letsencrypt/letsencrypt
+   
+   cd letsencrypt
+   
+   ./certbot-auto certonly -d <域名> --manual --preferred-challenges dns --server https://acme-v02.api.letsencrypt.org/directory
+   
+   ```
+
+   
